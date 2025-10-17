@@ -1,10 +1,11 @@
 import { describe, test, expect } from "@jest/globals"
 
-describe('Calculer le total du panier', () =>{
-    const panier = [
-        { nom: "pomme", prix: 1 },
-        { nom: "banane", prix: 1 },
-    ];
+const panier = [
+    { nom: "pomme", prix: 1 },
+    { nom: "banane", prix: 1 },
+];
+
+describe('Tests panier', () =>{
     test('Calculer le total du panier', () =>{
         expect(getTotalPanier(panier)).toEqual(2)
     })
