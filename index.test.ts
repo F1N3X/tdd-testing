@@ -14,6 +14,19 @@ describe('Tests panier', () =>{
     test('Calculer le total du panier', () =>{
         expect(getTotalPanier(panier)).toEqual(2)
     })
+
+    test('Ajouter un produit au panier', () =>{
+        const panierLengthBefore = panier.length;
+        const nouveauProduit: Produit = { nom: "orange", prix: "2" };
+        panier.push(nouveauProduit);
+        console.log(panier);
+        const panierLengthAfter = panier.length;
+
+        expect(typeof nouveauProduit.nom).toBe("string");
+        expect(typeof nouveauProduit.prix).toBe("number");
+        expect(panierLengthAfter).toBe(panierLengthBefore + 1);
+        expect(panier).toContain(nouveauProduit);
+    })
 })
 
 function getTotalPanier(panier: Produit[]): number {
