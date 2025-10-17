@@ -18,8 +18,7 @@ describe('Tests panier', () =>{
     test('Ajouter un produit au panier', () =>{
         const panierLengthBefore = panier.length;
         const nouveauProduit: Produit = { nom: "orange", prix: 2 };
-        panier.push(nouveauProduit);
-        console.log(panier);
+        addProduitToPanier(panier, nouveauProduit);
         const panierLengthAfter = panier.length;
 
         expect(typeof nouveauProduit.nom).toBe("string");
@@ -31,4 +30,8 @@ describe('Tests panier', () =>{
 
 function getTotalPanier(panier: Produit[]): number {
     return panier.reduce((total, produit) => total + produit.prix, 0);
+}
+
+function addProduitToPanier(panier: Produit[], produit: Produit): void {
+    panier.push(produit);
 }
