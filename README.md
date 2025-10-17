@@ -52,6 +52,8 @@ Vous devez produire :
 3. Un code final refactorisé, lisible et cohérent.
 4. Expliquez en quelques lignes comment vous intégreriez ces tests dans un pipeline CI/CD.
 
+Pour intégrer ces tests dans un pipeline CI/CD, je commencerais par configurer un système d'intégration continue comme GitHub Actions. À chaque fois qu'un commit est effectué sur la branche principale, le pipeline déclencherait automatiquement l'exécution des tests unitaires. Je m'assurerais que les tests sont exécutés dans un environnement isolé pour garantir la cohérence des résultats. En cas d'échec des tests, une notification serait envoyée aux développeurs pour qu'ils puissent corriger les erreurs avant de poursuivre le déploiement. Cela permettrait de maintenir une qualité de code élevée tout en facilitant les mises à jour fréquentes. 
+
 ---
 
 ### 🧾 **Barème récapitulatif**
