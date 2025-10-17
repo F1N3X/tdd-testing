@@ -6,6 +6,10 @@ describe('Calculer le total du panier', () =>{
         { nom: "banane", prix: 1 },
     ];
     test('Calculer le total du panier', () =>{
-        expect(panier.reduce((total, produit) => total + produit.prix, 0)).toEqual(2)
+        expect(getTotalPanier(panier)).toEqual(2)
     })
 })
+
+function getTotalPanier(panier: { nom: string; prix: number }[]): number {
+    return panier.reduce((total, produit) => total + produit.prix, 0);
+}
