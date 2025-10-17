@@ -1,6 +1,11 @@
 import { describe, test, expect } from "@jest/globals"
 
-const panier = [
+interface Produit {
+    nom: string;
+    prix: number;
+}
+
+const panier: Produit[] = [
     { nom: "pomme", prix: 1 },
     { nom: "banane", prix: 1 },
 ];
@@ -11,6 +16,6 @@ describe('Tests panier', () =>{
     })
 })
 
-function getTotalPanier(panier: { nom: string; prix: number }[]): number {
+function getTotalPanier(panier: Produit[]): number {
     return panier.reduce((total, produit) => total + produit.prix, 0);
 }
