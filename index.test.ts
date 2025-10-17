@@ -6,6 +6,6 @@ describe('Calculer le total du panier', () =>{
         { nom: "banane", prix: 1 },
     ];
     test('Calculer le total du panier', () =>{
-        expect(0).toEqual(2)
+        expect(panier.reduce((total, produit) => total + produit.prix, 0)).toEqual(2)
     })
 })
