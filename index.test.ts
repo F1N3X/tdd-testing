@@ -13,6 +13,12 @@ const panier: Produit[] = [
 describe('Tests panier', () =>{
     test('Calculer le total du panier', () =>{
         expect(getTotalPanier(panier)).toEqual(2)
+        
+        const panierCher: Produit[] = [
+            { nom: "ordinateur", prix: 80 },
+            { nom: "souris", prix: 30 },
+        ];
+        expect(getTotalPanier(panierCher)).toEqual(99); // 110 - 10% = 99
     })
 
     test('Ajouter un produit au panier', () =>{
