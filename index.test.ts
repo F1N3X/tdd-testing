@@ -43,8 +43,9 @@ describe('Tests panier', () =>{
 })
 
 function getTotalPanier(panier: Produit[]): number {
-    const total = panier.reduce((total, produit) => total + produit.prix, 0);
-    
+    let total = panier.reduce((total, produit) => total + produit.prix, 0);
+
+    total = Math.round(total * 100) / 100;
     if (total > 100) {
         return total * 0.9;
     }
