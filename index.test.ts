@@ -15,11 +15,18 @@ const panierCher: Produit[] = [
     { nom: "souris", prix: 30 },
 ];
 
+const panierPrecis: Produit[] = [
+    { nom: "livre", prix: 15.4 },
+    { nom: "stylo", prix: 5.563 },
+];
+
 describe('Tests panier', () =>{
     test('Calculer le total du panier', () =>{
         expect(getTotalPanier(panier)).toEqual(2)
         
         expect(getTotalPanier(panierCher)).toEqual(99); // 110 - 10% = 99
+
+        expect(getTotalPanier(panierPrecis)).toEqual(20.96);
     })
 
     test('Ajouter un produit au panier', () =>{
